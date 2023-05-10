@@ -29,5 +29,7 @@ VALUES
 
 INSERT INTO `role` (`id`, `description`, `name`) VALUES ('1', 'ROLE_ADMIN', 'ROLE_ADMIN');
 INSERT INTO `role` (`id`, `description`, `name`) VALUES ('2', 'ROLE_USER', 'ROLE_USER');
+INSERT INTO `role` (`id`, `description`, `name`) VALUES ('3', 'ROLE_PROVIDER', 'ROLE_PROVIDER');
+INSERT INTO `role` (`id`, `description`, `name`) VALUES ('4', 'ROLE_OWNER', 'ROLE_OWNER');
 
 INSERT INTO `user` (`id_person`, `id_role`) VALUES ('1', '1');
