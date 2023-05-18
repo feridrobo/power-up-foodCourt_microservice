@@ -9,6 +9,16 @@ public class Constants {
     public static final Long CLIENT_ROLE_ID = 1L;
     public static final Long EMPLOYEE_ROLE_ID = 2L;
     public static final Long PROVIDER_ROLE_ID = 3L;
+
+    public static final String EMPTY_NAME_MESSAGE = "The name field cannot be empty";
+    public static final String EMPTY_DIRECTION_MESSAGE = "The direction field cannot be empty";
+    public static final String EMPTY_IDOWNER_MESSAGE = "The idOwner field cannot be null";
+    public static final String INVALID_FORMAT_PHONE_MESSAGE = "Invalid phone number format";
+    public static final String EMPTY_URLLOGOTYPE_MESSAGE = "The urlLogotype field cannot be empty";
+    public static final String EMPTY_NIT_MESSAGE = "The nit field cannot be empty";
+    public static final String INVALID_PHONE_MESSAGE = "Invalid phone number";
+
+
     public static final int MAX_PAGE_SIZE = 2;
     public static final String RESPONSE_MESSAGE_KEY = "message";
     public static final String RESTAURANT_CREATED_MESSAGE = "Restaurant created successfully";
