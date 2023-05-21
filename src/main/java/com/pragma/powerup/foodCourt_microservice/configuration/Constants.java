@@ -6,33 +6,25 @@ public class Constants {
         throw new IllegalStateException("Utility class");
     }
 
-    public static final Long CLIENT_ROLE_ID = 1L;
-    public static final Long EMPLOYEE_ROLE_ID = 2L;
-    public static final Long PROVIDER_ROLE_ID = 3L;
 
+    public static final String USER_SERVICE_NAME = "user-service";
+    public static final String USER_SERVICE_URL = "http://localhost:8090/user";
+
+
+    public static final String NAME_ROLE_OWNER = "ROLE_OWNER";
     public static final String EMPTY_NAME_MESSAGE = "The name field cannot be empty";
     public static final String EMPTY_DIRECTION_MESSAGE = "The direction field cannot be empty";
     public static final String EMPTY_IDOWNER_MESSAGE = "The idOwner field cannot be null";
     public static final String INVALID_FORMAT_PHONE_MESSAGE = "Invalid phone number format";
+    public static final String INVALID_FORMAT_NIT_MESSAGE = "Invalid nil number format";
+    public static final String INVALID_FORMAT_NAME_MESSAGE = "Invalid nil number format";
+    public static final String INVALID_SIZE_PHONE_MESSAGE = "Invalid nil number format";
+    public static final String EMPTY_PHONE_MESSAGE = "The PHONE field cannot be empty";
     public static final String EMPTY_URLLOGOTYPE_MESSAGE = "The urlLogotype field cannot be empty";
     public static final String EMPTY_NIT_MESSAGE = "The nit field cannot be empty";
-    public static final String INVALID_PHONE_MESSAGE = "Invalid phone number";
-
-
-    public static final int MAX_PAGE_SIZE = 2;
-    public static final String RESPONSE_MESSAGE_KEY = "message";
-    public static final String RESTAURANT_CREATED_MESSAGE = "Restaurant created successfully";
-    public static final String USER_CREATED_MESSAGE = "User created successfully";
-    public static final String USER_DELETED_MESSAGE = "User deleted successfully";
     public static final String RESPONSE_ERROR_MESSAGE_KEY = "error";
     public static final String WRONG_CREDENTIALS_MESSAGE = "Wrong credentials or role not allowed";
-    public static final String NO_DATA_FOUND_MESSAGE = "No data found for the requested petition";
-    public static final String PERSON_ALREADY_EXISTS_MESSAGE = "A person already exists with the DNI number provided";
-    public static final String MAIL_ALREADY_EXISTS_MESSAGE = "A person with that mail already exists";
-    public static final String PERSON_NOT_FOUND_MESSAGE = "No person found with the id provided";
     public static final String ROLE_NOT_FOUND_MESSAGE = "No role found with the id provided";
-    public static final String ROLE_NOT_ALLOWED_MESSAGE = "No permission granted to create users with this role";
-    public static final String USER_ALREADY_EXISTS_MESSAGE = "A user already exists with the role provided";
     public static final String USER_NOT_FOUND_MESSAGE = "No user found";
     public static final String SWAGGER_TITLE_MESSAGE = "User API Pragma Power Up";
     public static final String SWAGGER_DESCRIPTION_MESSAGE = "User microservice";
@@ -40,7 +32,5 @@ public class Constants {
     public static final String SWAGGER_LICENSE_NAME_MESSAGE = "Apache 2.0";
     public static final String SWAGGER_LICENSE_URL_MESSAGE = "http://springdoc.org";
     public static final String SWAGGER_TERMS_OF_SERVICE_MESSAGE = "http://swagger.io/terms/";
-    public static final String EMPTY_FIELD_MESSAGE = "The field cannot be empty";
-    public static final String INVALID_FORMAT_MESSAGE = "Invalid format";
-    public static final String INVALID_OWNER_ID_MESSAGE = "Invalid ID for owner user";
+
 }
