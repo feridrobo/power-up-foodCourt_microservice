@@ -1,8 +1,6 @@
 package com.pragma.powerup.foodCourt_microservice.adapters.driving.http.dto.request;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -12,9 +10,7 @@ import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.
 import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.EMPTY_URLLOGOTYPE_MESSAGE;
 
 public class RestaurantRequestDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     @NotBlank(message = EMPTY_NAME_MESSAGE)
     @Pattern(regexp = "^(?=.*[a-zA-Z])([a-zA-Z0-9 ]+)$", message = INVALID_FORMAT_NAME_MESSAGE)

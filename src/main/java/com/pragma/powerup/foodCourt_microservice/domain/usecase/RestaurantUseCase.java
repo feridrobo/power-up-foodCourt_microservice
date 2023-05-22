@@ -3,19 +3,22 @@ package com.pragma.powerup.foodCourt_microservice.domain.usecase;
 import com.pragma.powerup.foodCourt_microservice.domain.api.IRestaurantServicePort;
 import com.pragma.powerup.foodCourt_microservice.domain.model.Restaurant;
 import com.pragma.powerup.foodCourt_microservice.domain.services.RestaurantServices;
+import com.pragma.powerup.foodCourt_microservice.domain.spi.IRestaurantPersistencePort;
 
 
 public class RestaurantUseCase implements IRestaurantServicePort {
 
-    private final RestaurantServices restaurantServices;
+    private final IRestaurantPersistencePort restaurantPersistencePort;
 
-    public RestaurantUseCase( RestaurantServices restaurantServices) {
-        this.restaurantServices = restaurantServices;
+
+    public RestaurantUseCase( IRestaurantPersistencePort restaurantPersistencePort) {
+        this.restaurantPersistencePort = restaurantPersistencePort;
     }
 
     @Override
     public void saveRestaurant(Restaurant restaurant) {
-        restaurantServices.validateIdOwner(restaurant.getIdOwner());
+        RestaurantServices.validateIdOwner(restaurant.getIdOwner());
+        restaurantPersistencePort.saveRestaurant(restaurant);
     }
 }
 

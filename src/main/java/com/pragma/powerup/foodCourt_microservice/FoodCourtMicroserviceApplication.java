@@ -2,12 +2,14 @@ package com.pragma.powerup.foodCourt_microservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-public class UserMicroserviceApplication {
+@EnableFeignClients
+public class FoodCourtMicroserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserMicroserviceApplication.class, args);
+		SpringApplication.run(FoodCourtMicroserviceApplication.class, args);
 	}
 
 }

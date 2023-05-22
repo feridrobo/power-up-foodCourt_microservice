@@ -11,9 +11,9 @@ public class RestaurantMysqlAdapter implements IRestaurantPersistencePort {
     private final IRestaurantEntityMapper restaurantEntityMapper;
     private final IRestaurantRepository restaurantRepository;
 
-    public RestaurantMysqlAdapter(IRestaurantEntityMapper restaurantEntityMapper, IRestaurantRepository restaurantRepository, IRestaurantRepository restaurantRepository1) {
+    public RestaurantMysqlAdapter(IRestaurantEntityMapper restaurantEntityMapper, IRestaurantRepository restaurantRepository) {
         this.restaurantEntityMapper = restaurantEntityMapper;
-        this.restaurantRepository = restaurantRepository1;
+        this.restaurantRepository = restaurantRepository;
     }
 
 

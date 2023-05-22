@@ -18,7 +18,6 @@ import java.util.Map;
 
 import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.RESPONSE_ERROR_MESSAGE_KEY;
 import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.ROLE_NOT_FOUND_MESSAGE;
-import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.USER_NOT_FOUND_MESSAGE;
 import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.WRONG_CREDENTIALS_MESSAGE;
 
 @ControllerAdvice

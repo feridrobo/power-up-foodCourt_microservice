@@ -10,13 +10,13 @@ import static com.pragma.powerup.foodCourt_microservice.configuration.Constants.
 
 public class RestaurantServices {
 
-    private final IRoleServiceClient roleServiceClient;
+    private  static IRoleServiceClient roleServiceClient;
 
     public RestaurantServices(IRoleServiceClient roleServiceClient) {
         this.roleServiceClient = roleServiceClient;
     }
 
-    public String getNameFromRoleService(Long userId) {
+    public static String getNameFromRoleService(Long userId) {
         ResponseEntity<JsonNode> response = roleServiceClient.getRoleForUserById(userId);
         if (response.getStatusCode().is2xxSuccessful()) {
             JsonNode jsonNode = response.getBody();
@@ -27,7 +27,7 @@ public class RestaurantServices {
         throw new InvalidRoleNameException();
     }
 
-    public void validateIdOwner(Long userId) {
+    public static void validateIdOwner(Long userId) {
         String roleName = getNameFromRoleService(userId);
         if (!roleName.equals(NAME_ROLE_OWNER)) {
             throw new InvalidRoleNameException();
