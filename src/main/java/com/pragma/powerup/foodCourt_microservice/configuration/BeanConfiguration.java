@@ -1,5 +1,6 @@
 package com.pragma.powerup.foodCourt_microservice.configuration;
 
+import com.pragma.powerup.foodCourt_microservice.adapters.driven.client.adapter.IRoleServiceClient;
 import com.pragma.powerup.foodCourt_microservice.adapters.driven.jpa.mysql.adapter.RestaurantMysqlAdapter;
 import com.pragma.powerup.foodCourt_microservice.domain.api.IRestaurantServicePort;
 import com.pragma.powerup.foodCourt_microservice.domain.spi.IRestaurantPersistencePort;
@@ -16,6 +17,7 @@ import com.pragma.powerup.foodCourt_microservice.adapters.driven.jpa.mysql.mappe
 public class BeanConfiguration {
     private final IRestaurantRepository restaurantRepository;
     private final IRestaurantEntityMapper restaurantEntityMapper;
+    private final IRoleServiceClient roleServiceClient;
     @Bean
     public IRestaurantPersistencePort restaurantPersistencePort() {
         return new RestaurantMysqlAdapter(restaurantEntityMapper,restaurantRepository);
@@ -23,6 +25,7 @@ public class BeanConfiguration {
 
     @Bean
     public IRestaurantServicePort restaurantServicePort() {
-        return new RestaurantUseCase(restaurantPersistencePort());
+
+        return new RestaurantUseCase(restaurantPersistencePort(),roleServiceClient );
     }
 }

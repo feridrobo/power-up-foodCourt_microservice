@@ -24,23 +24,27 @@ import java.util.Map;
 @RestController
 @RequestMapping("/restaurant/")
 @RequiredArgsConstructor
-@Tag(name = "Restaurant", description = "Controller for managing restaurant operations")
-@SecurityRequirement(name = "jwt")
 public class RestaurantController {
     private final IRestaurantHandler restaurantHandler;
 
     @Operation(summary = "Add a new restaurant",
             responses = {
                     @ApiResponse(responseCode = "201", description = "Restaurant successfully created",
-                            content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Message"))),
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(ref = "#/components/schemas/Map"))),
                     @ApiResponse(responseCode = "409", description = "Conflict - Restaurant already exists",
-                            content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Error"))),
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(ref = "#/components/schemas/Error"))),
                     @ApiResponse(responseCode = "401", description ="Unauthorized - Invalid authentication credentials",
-                            content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Error")))
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(ref = "#/components/schemas/Error")))
             })
     @PostMapping
-    public ResponseEntity<Map<String,String>> saveRestaurant(@RequestBody RestaurantRequestDto restaurantReqDto){
-        restaurantHandler.saveRestaurant(restaurantReqDto);
+    public ResponseEntity<Map<String,String>> saveRestaurant(@RequestBody RestaurantRequestDto restaurantRequestDto){
+        restaurantHandler.saveRestaurant(restaurantRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap(Constants.RESPONSE_MESSAGE_KEY, Constants.RESTAURANT_CREATED_MESSAGE));
     }}
